@@ -12,11 +12,13 @@ import { universityProjects } from '../data/universityProjects';
 
   <div class="grid md:grid-cols-2 gap-6">
     {universityProjects.map((project) => (
-      <Card 
+      <Card
         title={project.title}
         subtitle={project.subtitle}
         description={project.description}
+        summary={project.summary}
         href={project.href}
+        unavailable={project.unavailable}
       />
     ))}
   </div>

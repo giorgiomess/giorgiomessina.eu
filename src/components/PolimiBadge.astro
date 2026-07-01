@@ -1,0 +1,37 @@
+---
+// Small badge linking to the TLC Engineering programme at Politecnico di Milano.
+// Drop an SVG/PNG logo in `public/assets` and pass its path as `logoSrc`
+// to replace the placeholder icon below, e.g. logoSrc="/assets/polimi-logo.svg".
+import { GraduationCap } from 'lucide-react';
+
+interface Props {
+  logoSrc?: string;
+}
+
+const { logoSrc } = Astro.props;
+---
+
+<a
+  href="https://www.ccstlc.polimi.it/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group inline-flex items-center gap-3 pl-2 pr-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-[#102c53]/40 transition-all duration-300"
+>
+  <span
+    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full overflow-hidden bg-[#dbe1ea]"
+  >
+    {logoSrc ? (
+      <img src={logoSrc} alt="Politecnico di Milano logo" class="h-full w-full object-cover" />
+    ) : (
+      <GraduationCap className="w-5 h-5 text-[#102c53]" />
+    )}
+  </span>
+  <span class="text-left leading-tight">
+    <span class="block text-sm font-semibold text-slate-800 group-hover:text-[#102c53] transition-colors">
+      Student Representative
+    </span>
+    <span class="block text-xs text-slate-500">
+      Telecommunication Engineering @ PoliMi
+    </span>
+  </span>
+</a>

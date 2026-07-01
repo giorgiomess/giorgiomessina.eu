@@ -1,4 +1,32 @@
-export const universityProjects = [
+interface UniversityProject {
+  title: string;
+  subtitle: string;
+  description: string;
+  summary?: string;
+  href?: string;
+  unavailable?: boolean;
+}
+
+export const universityProjects: UniversityProject[] = [
+  {
+    title: "IXP Traffic Forecasting and Anomaly Detection",
+    subtitle: "Course: Network Measurements & Data Analysis",
+    summary: "Analyze, forecast and detect anomalies in Middle East IXP network traffic using ML",
+    description: "PyTorch, Scikit-Learn, Pandas",
+    unavailable: true
+  },
+  {
+    title: "Audio-Visual Morphing Delay Engine",
+    subtitle: "Course: Computer Music - Languages & Systems",
+    description: "SuperCollider, JUCE, Processing",
+    href: "/assets/cmls_slides.pdf"
+  },
+  {
+    title: "ROADM Architecture Performance & Grooming Evaluation",
+    subtitle: "Course: Communication Network Design - Nokia",
+    description: "NetworkX, Python",
+    href: "/assets/cnd_nokia_slides.pdf"
+  },
   {
     title: "SAR Tomography",
     subtitle: "Course: Inverse Problems Applied to Remote Sensing",

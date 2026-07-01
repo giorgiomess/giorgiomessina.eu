@@ -1,0 +1,39 @@
+---
+// Small badge linking to TEA (Telecommunication Engineering Association).
+// Drop an SVG/PNG logo in `public/assets` and pass its path as `logoSrc`
+// to replace the placeholder monogram below, e.g. logoSrc="/assets/tea-logo.svg".
+interface Props {
+  logoSrc?: string;
+}
+
+const { logoSrc } = Astro.props;
+---
+
+<a
+  href="https://tea-tlc.it/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group inline-flex items-center gap-3 pl-2 pr-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-[#33735b]/40 transition-all duration-300"
+>
+  <span
+    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full overflow-hidden bg-[#b3cbba]"
+  >
+    {logoSrc ? (
+      <img src={logoSrc} alt="TEA logo" class="h-full w-full object-cover" />
+    ) : (
+      <span
+        class="text-[11px] font-black tracking-tighter bg-gradient-to-br from-[#33735b] to-black bg-clip-text text-transparent"
+      >
+        TEA
+      </span>
+    )}
+  </span>
+  <span class="text-left leading-tight">
+    <span class="block text-sm font-semibold text-slate-800 group-hover:text-[#33735b] transition-colors">
+      President of TEA
+    </span>
+    <span class="block text-xs text-slate-500">
+      Telecommunication Engineering Association
+    </span>
+  </span>
+</a>
